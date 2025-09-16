@@ -20,7 +20,7 @@ set -o errexit
 set -o nounset
 
 echo "Stopping containers and destroying data volumes..."
-docker container rm -f producer
-docker container rm -f kafka
-docker compose down -v
+sudo docker container rm -f producer
+sudo docker container rm -f kafka
+sudo docker compose down -v
 echo "Lab successfully stopped"
