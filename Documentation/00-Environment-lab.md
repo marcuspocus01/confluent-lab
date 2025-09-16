@@ -6,7 +6,7 @@ Cette documentation va vous assurez que vous aurez votre environment prêt pour 
 
 Vous aurez besoin de: 
 - Une machine virtuelle Ubuntu 22.04 de 8 Gb de RAM et 2vCPU
-- Un accès terminal ( [**putty**](https://github.com/brrd/Abricotine) sur MS Windows ou Terminal sur MacOS X )
+- Un accès terminal ( [**putty**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) sur MS Windows ou Terminal sur MacOS X )
 
 Une fois connecter via SSH sur votre machine virtuelle, executer cette commande pour télécharger les scrips requis pour le lab:
 
