@@ -1,4 +1,4 @@
 #! /bin/bash
 
-docker container rm -f producer
-docker-compose down -v
+sudo docker container rm -f producer
+sudo docker-compose down -v

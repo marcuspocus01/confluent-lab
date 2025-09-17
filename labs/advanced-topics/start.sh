@@ -20,10 +20,10 @@ set -o errexit
 set -o nounset
 
 # Launch Kafka
-docker compose up -d
+sudo docker compose up -d
 
 echo "Waiting for Kafka to launch on 9092..."
-while ! kafka-topics --bootstrap-server kafka:9092 --list >/dev/null 2>&1 ; do
+while ! kafka-topics.sh --bootstrap-server kafka:9092 --list >/dev/null 2>&1 ; do
   sleep 1.0
   echo "Kafka not yet ready..."
 done
@@ -34,7 +34,7 @@ Kafka is now ready!
 Creating 'vehicle-positions' topic...
 EOF
 
-kafka-topics --bootstrap-server kafka:9092 \
+kafka-topics.sh --bootstrap-server kafka:9092 \
     --topic vehicle-positions \
     --create \
     --partitions 6 \
@@ -46,7 +46,7 @@ Topic created.
 Building and running producer...
 EOF
 
-docker container run -d \
+sudo docker container run -d \
     --name producer \
     --net advanced-topics_confluent \
     cnfltraining/vp-producer:v2

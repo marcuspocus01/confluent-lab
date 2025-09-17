@@ -44,4 +44,4 @@ sudo mv kafka /usr/local/bin
 echo Add to PATH in /etc/environment :/usr/local/bin/kafka/bin 
 sudo sed -i 's|^PATH="\(.*\)"$|PATH="\1:/usr/local/bin/kafka/bin"|' /etc/environment
 source /etc/environment
-echo "Votre Lab est prêt!.SVP redémarrer votre terminal pour valider les changements"
+echo "Votre Lab est prêt!. SVP redémarrer votre terminal pour valider les changements"
