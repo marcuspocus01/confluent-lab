@@ -1,2 +1,2 @@
 #! /bin/bash
-docker image build -t sample-consumer:1.0 .
+sudo docker image build -t sample-consumer:1.0 .

@@ -15,7 +15,7 @@ Nous allons exécuter tous les composants de notre cluster Kafka simple dans des
 Pour cela, accédez au dossier du projet et exécutez le script start.sh :
 
 
-       cd ~/confluent-fundamentals/labs/exploring
+       cd ~/confluent-lab/labs/exploring
        ./start.sh
 
 Le démarrage du cluster prendra un certain temps, soyez patient. Vous obtiendrez un résultat similaire à ceux-ci (raccourci pour plus de lisibilité) :
