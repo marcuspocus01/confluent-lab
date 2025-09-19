@@ -33,7 +33,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 echo Updating apt sources...
 sudo apt update -y
 echo Installing Docker...
-sudo apt install -y docker-ce docker-ce openjdk-21-jdk
+sudo apt install -y docker-ce docker-ce openjdk-21-jdk docker-ce-cli containerd.io docker-compose-plugin
 
 echo download kafka
 wget https://dlcdn.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz 
