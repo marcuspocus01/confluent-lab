@@ -11,7 +11,7 @@ Exécutez le cluster Kafka en accédant au dossier du projet et en exécutant le
 ## Travailler avec les Topics
 Commençons par utiliser l’outil kafka-topics pour lister tous les sujets enregistrés sur le cluster Kafka :
 
-    kafka-topics.sh --bootstrap-server kafka:9092 --list
+    kafka-topics --bootstrap-server kafka:9092 --list
 
 
 Vous devriez recevoir un message vide... 
@@ -20,11 +20,11 @@ Apparemment, il n'y a aucun Topic de disponible dans le cluster, ce qui est norm
 
 Créons maintenant un Topic appelé « vehicle-positions » avec 6 partitions et un facteur de réplication de 1 :
 
-    kafka-topics.sh --bootstrap-server kafka:9092 --create --topic vehicle-positions --partitions 6 --replication-factor 1
+    kafka-topics --bootstrap-server kafka:9092 --create --topic vehicle-positions --partitions 6 --replication-factor 1
 
 Pour vérifier les détails du Topic qui vient d'être créé, nous pouvons utiliser le paramètre --describe :
 
-    kafka-topics.sh --bootstrap-server kafka:9092 --describe --topic vehicle-positions
+    kafka-topics --bootstrap-server kafka:9092 --describe --topic vehicle-positions
 
 nous donnant ceci :
 
@@ -43,7 +43,7 @@ Essayez maintenant de créer un autre Topic appelé « test-topic » avec 3 pa
 
 Listez tous les sujets de votre cluster Kafka. 
 
-    kafka-topics.sh --bootstrap-server kafka:9092 --list
+    kafka-topics --bootstrap-server kafka:9092 --list
 
 Vous devriez voir ceci :
 
@@ -52,7 +52,7 @@ Vous devriez voir ceci :
 
 Pour supprimer le Topic « test-topic », utilisez la commande suivante :
 
-    kafka-topics.sh --bootstrap-server kafka:9092 --delete --topic test-topic
+    kafka-topics --bootstrap-server kafka:9092 --delete --topic test-topic
 
 Vérifiez que le Topic a disparu en répertoriant tous les Topics du cluster.
 
@@ -65,16 +65,16 @@ Basé sur les commandes disponible plus haut:
 1. Utilisez l'outil kafka-topics pour créer un sujet « sample-topic » avec 3 partitions et un facteur de réplication de 1.
 
 
-        kafka-topics.sh --bootstrap-server kafka:9092 --create --topic sample-topic --partitions 3 --replication-factor 1
+        kafka-topics --bootstrap-server kafka:9092 --create --topic sample-topic --partitions 3 --replication-factor 1
 
 2. Vérifiez que le Topic est bien créé en répertoriant tous les Topics du cluster.
 
-        kafka-topics.sh --bootstrap-server kafka:9092 --list
+        kafka-topics --bootstrap-server kafka:9092 --list
 
 
 Exécutez l'outil de ligne de commande kafka-console-producer :
 
-    kafka-console-producer.sh --bootstrap-server kafka:9092 --topic sample-topic
+    kafka-console-producer --bootstrap-server kafka:9092 --topic sample-topic
 
 Tapez Hello à l'invite et appuyez sur <Entrée> :
 
@@ -91,7 +91,7 @@ et appuyez sur CTRL-d lorsque vous avez terminé pour quitter le producteur.
 
 Utilisez maintenant kafka-console-consumer pour consommer toutes les données depuis le début du topic "sample-topic" :
 
-    kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic sample-topic --from-beginning
+    kafka-console-consumer --bootstrap-server kafka:9092 --topic sample-topic --from-beginning
 
 Dans mon cas, le résultat ressemble à ceci :
 
@@ -107,7 +107,7 @@ Terminez le consommateur en appuyant sur CTRL-c
 
 Jusqu'à présent, nous avons produit et consommé des données sans clé. Exécutons maintenant le producteur de manière à pouvoir également saisir une clé pour chaque valeur :
 
-    kafka-console-producer.sh --bootstrap-server kafka:9092 --topic sample-topic --property parse.key=true --property key.separator=,
+    kafka-console-producer --bootstrap-server kafka:9092 --topic sample-topic --property parse.key=true --property key.separator=,
 
 Les deux derniers paramètres indiquent au producteur d'attendre une clé et d'utiliser la virgule (,) comme séparateur entre la clé et la valeur à l'entrée.
 

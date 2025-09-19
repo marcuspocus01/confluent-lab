@@ -33,12 +33,12 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 echo Updating apt sources...
 sudo apt update -y
 echo Installing Docker...
-sudo apt install -y docker-ce docker-ce openjdk-21-jdk docker-ce-cli containerd.io docker-compose-plugin
+sudo apt install -y docker-ce docker-ce openjdk-21-jdk docker-ce-cli containerd.io docker-compose docker-compose-plugin
 
 echo download kafka
-wget https://dlcdn.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz 
-tar -xzf kafka_2.13-4.1.0.tgz
-mv kafka_2.13-4.1.0 kafka
+wget https://packages.confluent.io/archive/8.0/confluent-8.0.0.tar.gz
+tar -xzf confluent-8.0.0.tar.gz
+mv confluent-8.0.0 kafka
 echo moving kafka binaries to /usr/local/bin
 sudo mv kafka /usr/local/bin 
 echo Add to PATH in /etc/environment :/usr/local/bin/kafka/bin 

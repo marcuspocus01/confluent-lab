@@ -39,7 +39,7 @@ indiquant qu'un conteneur portant l'ID ci-dessus exécute votre consommateur (en
 Utilisons l'outil kafka-consumer-groups pour voir ce qui se passe :
 
 
-    kafka-consumer-groups.sh --bootstrap-server kafka:9092 --group vp-consumer --describe
+    kafka-consumer-groups --bootstrap-server kafka:9092 --group vp-consumer --describe
 
     GROUP           TOPIC             PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                 HOST            CLIENT-ID
     vp-consumer     vehicle-positions 5          4867            14681           9814            consumer-vp-consumer-1-7a214cf1-d9f4-4da3-80dd-0e5d565bdfab /172.18.0.4     consumer-vp-consumer-1
@@ -55,7 +55,7 @@ Répétez la commande ci-dessus plusieurs fois et observez comment le LAG se com
 
 Vous pouvez utiliser la commande watch pour observer l'évolution du LAG au fil du temps :
 
-    watch kafka-consumer-groups.sh --bootstrap-server kafka:9092 --group vp-consumer --describe
+    watch kafka-consumer-groups --bootstrap-server kafka:9092 --group vp-consumer --describe
 
 Terminez la surveillance en appuyant sur Ctrl-c.
 
@@ -65,7 +65,7 @@ Exécutons un autre consommateur et évoluons jusqu’à 2 instances :
 
 Et décrire à nouveau le groupe de consommateurs vp-consumer :
 
-    kafka-consumer-groups.sh --bootstrap-server kafka:9092 --group vp-consumer --describe
+    kafka-consumer-groups --bootstrap-server kafka:9092 --group vp-consumer --describe
 
 Nous constatons maintenant qu'il existe deux instances de consommateurs. Un rééquilibrage transparent de la charge de travail a eu lieu !
 Veuillez également noter que le LAG ne croît plus aussi vite qu'avant, car nous avons parallélisé la charge de travail.

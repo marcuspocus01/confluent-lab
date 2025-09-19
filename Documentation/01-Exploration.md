@@ -37,7 +37,7 @@ Le démarrage du cluster prendra un certain temps, soyez patient. Vous obtiendre
 
 Utilisez ensuite l'outil kafka-console-consumer installé sur votre machine virtuelle de laboratoire pour lire les données que le producteur écrit dans Kafka. Pour ce faire, utilisez la commande suivante :
 
-    kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic vehicle-positions
+    kafka-console-consumer --bootstrap-server kafka:9092 --topic vehicle-positions
 
 Après quelques instants, vous devriez voir les enregistrements s'afficher rapidement sur votre terminal. Ces enregistrements sont des données en temps réel provenant d'une source MQTT. Chaque enregistrement correspond à la position d'un véhicule (bus, tram ou train) du fournisseur de transports publics finlandais. Les données se présentent comme suit (en résumé) :
 

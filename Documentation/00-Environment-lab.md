@@ -20,7 +20,7 @@ Une fois téléchager, entrer dans le répertoire confluent-lab et exécuter le 
 Ce script va installer :
 - Java JDK 21
 - Docker CE et containers.io
-- Kafka 4.1
+- Confluent 8 CLI
 
 Une fois complété, redémarrer ou reconnectez-vous à votre machine virtuelle afin d'assurer que tous les chemin d'accès soit bien configuré.
 
